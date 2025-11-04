@@ -1,16 +1,10 @@
-# relationship_app/urls.py
 
 from django.urls import path
-from .views import (
-    list_books,
-    LibraryDetailView,
-    register_view,
-    login_view,
-    logout_view,
-    admin_view,
-    librarian_view,
-    member_view
-)
+from .views import list_books  # Function-based view
+from .views import LibraryDetailView  # Class-based view
+
+from .views import register_view, login_view, logout_view  # Authentication views
+from .views import admin_view, librarian_view, member_view  # Role-based views
 
 urlpatterns = [
     # Function-based and Class-based views for books and libraries
