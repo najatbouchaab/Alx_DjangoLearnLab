@@ -1,0 +1,6 @@
+Django>=3.2,<4.0
+djangorestframework
+Pillow
+django-debug-toolbar
+markdown
+django-filter

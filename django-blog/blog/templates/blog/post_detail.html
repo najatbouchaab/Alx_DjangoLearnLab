@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    {% include 'blog/base.html' %}
+    <div class="post-detail">
+        <h1>{{ post.title }}</h1>
+        <p><em>By {{ post.author }} on {{ post.published_date }}</em></p>
+        <div class="post-content">
+            {{ post.content|safe }}
+        </div>
+        <hr>
+        <h2>Comments</h2>
+        <div class="comments">
+            {% for comment in post.comments.all %}
+                <div class="comment">
+                    <p><strong>{{ comment.author }}</strong>: {{ comment.text }}</p>
+                </div>
+            {% empty %}
+                <p>No comments yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
